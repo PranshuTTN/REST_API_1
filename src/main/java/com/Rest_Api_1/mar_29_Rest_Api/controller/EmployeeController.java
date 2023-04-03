@@ -33,4 +33,8 @@ public class EmployeeController {
         employeeDao.addEmployee(employee);
         return employee;
     }
+    @DeleteMapping("/employees/{id}")
+    public void deleteUser(@PathVariable int id){
+        employeeDao.deleteById(id);
+    }
 }

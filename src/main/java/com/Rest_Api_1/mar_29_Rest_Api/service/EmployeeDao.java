@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 @Component
 public class EmployeeDao {
@@ -29,5 +30,9 @@ public class EmployeeDao {
     public Employee addEmployee(Employee employee){
         empList.add(employee);
         return employee;
+    }
+    public void deleteById(int id){
+        Predicate<? super Employee> predicate = employee -> employee.getEmpId()==id;
+        empList.removeIf(predicate);
     }
 }
