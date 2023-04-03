@@ -1,8 +1,17 @@
 package com.Rest_Api_1.mar_29_Rest_Api.entities;
 
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.Size;
+
+//Q2. Create an Employee Bean(id, name, age) and
+// service to  perform different operations related to employee.
 public class Employee {
-    private int empId,empAge;
+    private int empId;
+    //Q9. Apply validation while create a new employee using POST http Request.
+    @Size(min = 3,message = "Name should have atleast 3 characters.")
     private String empName;
+    @Positive(message = "Age should be greater than zero")
+    private int empAge;
 
     public Employee(int empId,String empName,int empAge) {
         this.empId = empId;

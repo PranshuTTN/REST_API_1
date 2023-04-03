@@ -6,7 +6,8 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
-
+//Q2. Create an Employee Bean(id, name, age) and
+// service to  perform different operations related to employee.
 @Component
 public class EmployeeDao {
     private static List<Employee> empList = new ArrayList<>();
