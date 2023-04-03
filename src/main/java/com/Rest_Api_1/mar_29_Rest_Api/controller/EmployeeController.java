@@ -4,10 +4,7 @@ import com.Rest_Api_1.mar_29_Rest_Api.entities.Employee;
 import com.Rest_Api_1.mar_29_Rest_Api.exception.EmployeeNotFoundException;
 import com.Rest_Api_1.mar_29_Rest_Api.service.EmployeeDao;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,6 +26,11 @@ public class EmployeeController {
         if (employee==null){
             throw new EmployeeNotFoundException("ID: "+id );
         }
+        return employee;
+    }
+    @PostMapping("/employees")
+    public Employee addEmployee(@RequestBody Employee employee){
+        employeeDao.addEmployee(employee);
         return employee;
     }
 }
