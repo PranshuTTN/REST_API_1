@@ -37,4 +37,9 @@ public class EmployeeController {
     public void deleteUser(@PathVariable int id){
         employeeDao.deleteById(id);
     }
+    @PutMapping("/employees/{id}")
+    public Employee updateUser(@RequestBody Employee employee){
+        employeeDao.updateCourse(employee);
+        return employee;
+    }
 }

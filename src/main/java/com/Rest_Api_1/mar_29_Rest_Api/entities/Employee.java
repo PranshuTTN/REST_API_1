@@ -21,4 +21,12 @@ public class Employee {
     public String getEmpName() {
         return empName;
     }
+
+    public void setEmpAge(int empAge) {
+        this.empAge = empAge;
+    }
+
+    public void setEmpName(String empName) {
+        this.empName = empName;
+    }
 }

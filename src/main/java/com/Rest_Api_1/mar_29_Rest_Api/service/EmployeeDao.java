@@ -35,4 +35,13 @@ public class EmployeeDao {
         Predicate<? super Employee> predicate = employee -> employee.getEmpId()==id;
         empList.removeIf(predicate);
     }
+    public Employee updateCourse(Employee employee) {
+        empList.forEach(e -> {
+            if(e.getEmpId()==employee.getEmpId()){
+                e.setEmpName(employee.getEmpName());
+                e.setEmpAge(employee.getEmpAge());
+            }
+        });
+        return employee;
+    }
 }
